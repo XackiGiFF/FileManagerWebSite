@@ -1,0 +1,162 @@
+/* Основные стили для навигации */
+#top-nav {
+    position: fixed;
+    top: 0;
+    width: calc(100% - 40px);
+    margin: 0 20px;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background: linear-gradient(135deg, #2c003e, #4b0082, #ff007f); 
+    border-bottom: 1px solid #4b0082;
+    color: #fff;
+    border-radius: 10px;
+}
+
+.logo a {
+    font-size: 24px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #fff;
+    margin-right: 30px;
+}
+
+.menu-buttons {
+    display: flex;
+    gap: 15px;
+}
+
+/* Ссылки в меню */
+.menu-buttons a {
+    color: #fff;
+    padding: 10px 15px;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background 0.3s ease;
+}
+
+.menu-buttons a:hover {
+    background: #2c003e;
+}
+
+/* Стили для гамбургер-меню */
+.hamburger-menu {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    padding: 10px;
+    background-color: #4b0082;
+    border-radius: 8px;
+    margin-left: 10px;
+}
+
+.hamburger-menu span {
+    height: 3px;
+    width: 25px;
+    background: white;
+    margin: 3px 0;
+    border-radius: 2px;
+}
+
+/* Мобильное меню */
+#mobile-nav {
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 1em 2em;
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 250px;
+    z-index: 1001;
+    display: none;
+    flex-direction: column;
+    justify-content: flex-start; /* Размещаем ссылки сверху вниз */
+    align-items: center;
+}
+
+/* Ссылки в мобильном меню */
+#mobile-nav a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 0; /* Вертикальный отступ для ссылок */
+    width: 100%; /* Занимает всю ширину меню */
+    text-align: center; /* Центрирование текста */
+    border-bottom: 1px solid white; /* Разделительные полосы */
+}
+
+#mobile-nav a:last-child {
+    border-bottom: none;
+}
+
+#mobile-nav .auth-section {
+    margin-bottom: 20px; /* Отдельное пространство для кнопок регистрации */
+}
+
+#mobile-nav .auth-btn {
+    background-color: #4b0082;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
+    margin-bottom: 10px; /* Отступ между кнопками */
+}
+
+#close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    cursor: pointer;
+    color: white;
+}
+
+/* Скрываем на больших экранах */
+@media (max-width: 768px) {
+    .menu-buttons, .auth-buttons {
+        display: none;
+    }
+    .hamburger-menu {
+        display: flex;
+    }
+    #mobile-nav {
+        display: none;
+    }
+}
+
+/* Анимация для плавного открытия и закрытия мобильного меню */
+#mobile-nav.open {
+    display: flex;
+    animation: slideIn 0.3s forwards;
+}
+
+#mobile-nav.close {
+    display: none;
+    animation: slideOut 0.3s forwards;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        right: -220px;
+    }
+    to {
+        opacity: 1;
+        right: 0;
+    }
+}
+
+@keyframes slideOut {
+    from {
+        opacity: 1;
+        right: 0;
+    }
+    to {
+        opacity: 0;
+        right: -220px;
+    }
+}

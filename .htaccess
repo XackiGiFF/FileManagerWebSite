@@ -1,0 +1,24 @@
+RewriteEngine On
+
+# Исключение существующих файлов и директорий из перенаправления
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# Правило для обработки запросов к файлам в директории files
+RewriteCond %{REQUEST_URI} ^/files/ [NC]
+RewriteRule ^files/([^/]+)$ index.php?page=download&file=$1 [L,NC]
+
+# Правило для обработки запросов к файлам в виртуальной директории upload
+RewriteCond %{REQUEST_URI} ^/upload/ [NC]
+RewriteRule ^upload/([^/]+)$ index.php?page=upload&file=$1 [L,NC]
+
+# Исключение файлов в директории files из общего перенаправления
+RewriteCond %{REQUEST_URI} !^/files/ [NC]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# Правило проверяет наличие только одного сегмента в пути, чтобы избежать перенаправлений для главной страницы и других.
+RewriteCond %{REQUEST_URI} ^/([^/]+)/?$ [NC]
+
+# Переписываем URL /что-то на index.php?page=что-то&page_section=что-то
+RewriteRule ^([^/]+)/?$ /index.php?page=$1&page_section=$1 [L,NC,QSA]

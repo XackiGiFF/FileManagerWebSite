@@ -1,0 +1,218 @@
+/* Стили для кнопки назад */
+.btn {
+    background-color: #4b0082;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
+    text-align-last: center;
+    min-width: 100%;
+}
+
+.btn-back {
+    background-color: white; /* Белый цвет фона */
+    border: 1px solid #ccc; /* Серый цвет обводки */
+    color: #333; /* Цвет текста */
+    padding: 10px; /* Отступы */
+    text-align: center; /* Выравнивание текста */
+    text-decoration: none; /* Убираем подчеркивание */
+    display: block; /* Блок внутри ссылки */
+    box-sizing: border-box; /* Учёт полосы границы и внутренних отступов */
+    border-radius: 12px; /* Скругленные углы */
+    margin: 10px 0; /* Отступы между элементами списка */
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out; /* Плавный переход для фона и цвета текста */
+    cursor: pointer; /* Указатель курсора при наведении */
+}
+
+.btn-back:hover {
+    background-color: #f0f0f0; /* Светло-серый при наведении */
+    color: #333; /* Цвет текста при наведении */
+}
+
+/* Стили для списка файлов */
+.file-list {
+    list-style-type: none; /* Убираем маркеры списка */
+    padding: 0;
+}
+
+/* Стили для элементов списка файлов */
+.file-list li {
+    animation: bubbleGradient 15s ease infinite; /* Анимация градиента */
+    background: linear-gradient(135deg, #2c003e, #4b0082, #ff007f, #ff4f81); /* Градиент цвета */
+    background-size: 200% 200%;
+    border: 1px solid rgba(173, 216, 230, 0.5); /* Полупрозрачная голубая обводка */
+    border-radius: 12px; /* Скругленные углы */
+    margin: 10px 0; /* Отступы между элементами списка */
+    padding: 10px; /* Внутренние отступы */
+    color: white; /* Белый цвет текста */
+    text-decoration: none; /* Убираем подчеркивание */
+    text-align: center; /* Выравнивание текста */
+    position: relative; /* Для псевдоэлементов */
+    overflow: hidden; /* Для градиента */
+    cursor: pointer; /* Указатель курсора при наведении */
+}
+
+.file-list li::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 200%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(173, 216, 230, 0.7), rgba(255, 255, 255, 0)); /* Плавный переход голубого в прозрачный */
+    transition: left 0.5s linear;
+    z-index: 0; /* Расположение под содержимым */
+}
+
+.file-list li:hover::before {
+    left: 100%;
+}
+
+.file-list li:hover {
+    background-color: #f0f0f0; /* Подсветление при наведении */
+    color: white; /* Белый цвет текста при наведении */
+}
+
+.file-list li a {
+    position: relative;
+    z-index: 1; /* Размещаем поверх псевдоэлементов */
+    color: white; /* Белый цвет текста */
+    text-decoration: none; /* Убираем подчеркивание */
+    transition: none;
+    display: block; /* Блочный элемент для увеличения области клика */
+    width: 100%; /* Ширина 100% */
+    height: 100%; /* Высота 100% */
+    padding: 10px; /* Отступы */
+    box-sizing: border-box; /* Учёт полосы границы и и внутренних отступов */
+    text-align: center; /* Выравнивание текста */
+}
+
+/* Включение ключевых кадров анимации градиента */
+@keyframes bubbleGradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Стили для кнопок пагинации */
+.pagination {
+    display: flex; /* Включаем флекс-контейнер */
+    justify-content: center; /* Выравнивание по центру */
+    margin: 20px 0; /* Отступы сверху и снизу */
+}
+
+.btn-pagination {
+    background-color: white; /* Белый цвет фона */
+    border: 1px solid #ccc; /* Серый цвет обводки */
+    color: #333; /* Цвет текста */
+    padding: 10px; /* Отступы */
+    text-align: center; /* Выравнивание текста */
+    text-decoration: none; /* Убираем подчеркивание */
+    margin: 0 5px; /* Отступы с обеих сторон */
+    border-radius: 5px; /* Скругленные углы */
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out; /* Плавный переход для фона и цвета текста */
+    cursor: pointer; /* Указатель курсора при наведении */
+}
+
+.btn-pagination:hover {
+    background-color: #f0f0f0; /* Светло-серый при наведении */
+    color: #333; /* Цвет текста при наведении */
+}
+
+.current-page {
+    background-color: #333; /* Темный цвет фона для текущей страницы */
+    color: white; /* Белый цвет текста */
+    padding: 10px; /* Отступы */
+    margin: 0 5px; /* Отступы с обеих сторон */
+    border-radius: 5px; /* Скругленные углы */
+}
+
+.auth-buttons {
+    display: flex;
+    gap: 10px;
+    margin-left: auto;
+}
+
+.auth-buttons a {
+    background: #4b00823b;
+    color: #fff;
+    padding: 10px 15px;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background 0.3s ease;
+}
+/* При наведении на кнопку меняем цвет */
+.auth-buttons a:hover {
+    background: #2c003e;
+}
+
+.auth-buttons .auth-btn {
+    background-color: #4b0082;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
+    text-align-last: center;
+    width: -webkit-fill-available;
+}
+
+.auth-buttons .auth-btn:hover {
+    background-color: #2c003e;
+}
+
+/* Для Форм */
+.auth-form-buttons {
+    display: flex;
+    gap: 10px;
+    margin-left: auto;
+}
+
+.auth-form-buttons a {
+    background: #4b00823b;
+    color: #fff;
+    padding: 10px 15px;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background 0.3s ease;
+}
+/* При наведении на кнопку меняем цвет */
+.auth-form-buttons a:hover {
+    background: #2c003e;
+}
+
+.auth-form-buttons .auth-btn {
+    background-color: #4b0082;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
+    text-align-last: center;
+    width: -webkit-fill-available;
+}
+
+.auth-form-buttons .auth-btn:hover {
+    background-color: #2c003e;
+}
+/* Конец для форм */
+
+/* Скрытие auth-buttons на маленьких экранах */
+@media (max-width: 768px) {
+    .auth-buttons {
+        display: none;
+    }
+}

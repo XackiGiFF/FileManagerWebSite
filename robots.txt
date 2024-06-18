@@ -1,0 +1,20 @@
+# Указать, что все поисковые боты могут индексировать весь сайт
+User-agent: *
+Disallow:
+
+# Запретить доступ к административной части сайта
+Disallow: /admin/
+
+# Запретить доступ к приватным файлам
+Disallow: /private/
+Disallow: /config/
+Disallow: /application/
+
+# Запретить индексацию CGI-скриптов
+Disallow: /cgi-bin/
+
+# Указать путь к sitemap
+Sitemap: http://o91119si.beget.tech/sitemap.xml
+
+# Указать путь к пользовательской странице ошибки 404 (опционально, если требуется)
+Disallow: /404
