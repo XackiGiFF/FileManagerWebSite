@@ -8,15 +8,10 @@ ini_set('display_errors', 1);
 ini_set('memory_limit', '2048M');
 /* End Block */
 
-$servername = 'localhost';
-$username = 'o91119si_mpe';
-$password = 'h*WsUt37';
-$dbname = 'o91119si_mpe';
-
-//$servername = 'localhost';
-//$username = 'id22322716_mpe';
-//$password = 'h*WsUt37';
-//$dbname = 'id22322716_mpe_db';
+$servername = '';
+$username = '';
+$password = '';
+$dbname = '';
 
 const CORE_LOADED = true;
 
@@ -33,7 +28,7 @@ const THEME_URL = '/application/theme/' . THEME_NAME . '/';
 const THEME_PAGES_URL = THEME_URL . '/pages/';
 
 const YOUR_COMPANY = 'MPE: Coders';
-const VIRUS_TOTAL_API_KEY = 'ea8fea8627acf3b47bfe19b31fea250771c6fb78cebc4f67e0a860b3e2281742';
+const VIRUS_TOTAL_API_KEY = '';
 
 // SEO Block
 
